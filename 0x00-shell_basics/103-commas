@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -m -a -p ; printf "\n"
+ls -m -a -p
