@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Print a string ten times
+for i in {1..10}
+	do echo "Best School"
+done
