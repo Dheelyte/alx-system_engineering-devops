@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Update the package list
+sudo apt-get update
+
+# Install nginx
+sudo apt-get install nginx
+
+# Modify the default Nginx configuration to display "Hello World!"
+sudo sed -i '/location \/ {/a \\treturn 200 "Hello World!";' /etc/nginx/sites-available/default
+
+# Restart Nginx
+sudo service nginx restart
