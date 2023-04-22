@@ -2,13 +2,13 @@
 # Install a nginx server and accept traffic on port 80 and return string on GET /
 
 # Update the package list
-sudo apt-get update
+apt-get -y update
 
 # Install nginx
-sudo apt-get install nginx
+apt-get -y install nginx
 
 # Modify the default Nginx configuration to display "Hello World!"
 sudo sed -i '/location \/ {/a \\treturn 200 "Hello World!";' /etc/nginx/sites-available/default
 
 # Restart Nginx
-sudo service nginx restart
+service nginx restart
