@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# installs nginx and configures it on a remote server
+
+apt-get -y update
+apt-get -y install nginx
+ufw allow 'Nginx HTTP'
+echo 'Hello World!' > /var/www/html/index.html
+CONFIG=\
+"server {
+        listen 80;
+	listen [::]:80;
+	server_name delightdev.tech;
+	rewrite ^/redirect_me https://www.linkedin.com/in/delight-olagbuji permanent;
+}"
+bash -c "echo -e '$CONFIG' > /etc/nginx/sites-available/redirect.conf"
+bash -c "ln -s /etc/nginx/sites-available/redirect.conf /etc/nginx/sites-enabled/"
+service nginx start
