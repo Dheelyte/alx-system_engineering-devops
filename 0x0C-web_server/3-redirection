@@ -1,17 +1,30 @@
 #!/usr/bin/env bash
-# installs nginx and configures it on a remote server
-
-apt-get -y update
+# Installs, configures, and starts the server
+apt-get update
 apt-get -y install nginx
-ufw allow 'Nginx HTTP'
+sudo ufw allow 'Nginx HTTP'
+mkdir -p /var/www/html/
+sudo chmod -R 755 /var/www
 echo 'Hello World!' > /var/www/html/index.html
-CONFIG=\
+SERVER_CONFIG=\
 "server {
-        listen 80;
-	listen [::]:80;
-	server_name delightdev.tech;
-	rewrite ^/redirect_me https://www.linkedin.com/in/delight-olagbuji permanent;
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	root /var/www/html;
+	index index.html index.htm index.nginx-debian.html;
+	server_name _;
+	location / {
+		try_files \$uri \$uri/ =404;
+	}
+	if (\$request_filename ~ redirect_me){
+		rewrite ^ https://sketchfab.com/bluepeno/models permanent;
+	}
 }"
-bash -c "echo -e '$CONFIG' > /etc/nginx/sites-available/redirect.conf"
-bash -c "ln -s /etc/nginx/sites-available/redirect.conf /etc/nginx/sites-enabled/"
-service nginx start
+
+bash -c "echo -e '$SERVER_CONFIG' > /etc/nginx/sites-enabled/default"
+
+if [ "$(pgrep -c nginx)" -le 0 ]; then
+	service nginx start
+else
+	service nginx restart
+fi
