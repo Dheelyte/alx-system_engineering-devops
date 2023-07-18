@@ -1,14 +1,34 @@
-![image](https://user-images.githubusercontent.com/105258746/188767412-2ac881ad-4583-491c-9f86-fa210d23a9db.png)
+# Shell Loops, Conditions,
+![](https://phoenixnap.com/kb/wp-content/uploads/2021/12/individual.sh-for-loop-script.png)
 
-# ALX Software Engineering DevOps Track
+## Use this command to generate RSA key `ssh-keygen -t rsa`
 
-## Description
-At ALX School `we do hard things`, the goal is not to be a good student rather the key goal is to be a good software Engineer. ALX_africa are on a mission to identify, develop and equip Africa’s next 3 million leaders. We have projects everyday that we have to push on GitHub in order for an automatic review to be done by `Ubuntu 20.04 LTS`. This repository contains directories each corresponding to a software engineering or DevOps project. These projects are part of the ALX Software Engineering year 1 curriculum. In these projects, we cover everything from the basics of the Linux Shell, Bash commands, Bash scripting, networking, APIs, and web-stack debugging to more advanced topics.
+## Learning objectives
 
-## Table of contents
-DIRECTORIES | DESCRIPTION
---------- | -----------
-[0x00-shell_basics](https://github.com/Lordwill1/alx-system_engineering-devops/tree/master/0x00-shell_basics) | Introduction to the basics of the Linux Shell
-[0x01-shell_permissions](https://github.com/Lordwill1/alx-system_engineering-devops/tree/master/0x01-shell_permissions) | Introduction to Shell permissions and the file system
-[0x02-shell_redirections](https://github.com/Lordwill1/alx-system_engineering-devops/tree/master/0x02-shell_redirections) | Introduction to Shell redirections
-[0x03-shell_variables_expansions](https://github.com/Lordwill1/alx-system_engineering-devops/tree/master/0x03-shell_variables_expansions) | Introduction to Shell variable expansions
+- How to create SSH keys
+- What is the advantage of using `#!/usr/bin/env` bash over `#!/bin/bash`
+- How to use `while`, `until` and `for` loops
+- How to use `if`, `else`, `elif` and case condition statements
+- How to use the `cut` command
+- What are files and other comparison operators, and how to use them
+
+## Requirements
+
+- Allowed editors: `vi`, `vim`, `emacs`
+- All your files will be interpreted on `Ubuntu 20.04 LTS`
+- All your files should end with a new line
+- A README.md file, at the root of the folder of the project, is mandatory
+- All your Bash script files must be executable
+- You are not allowed to use `awk`
+- Your Bash script must pass `Shellcheck` (version 0.7.0) without any error
+- The first line of all your Bash scripts should be exactly `#!/usr/bin/env bash`
+- The second line of all your Bash scripts should be a comment explaining what the script doing
+
+## Concepts
+
+- `env`
+- `cut`
+- `for`
+- `while`
+- `until`
+- `if`
